@@ -29,7 +29,7 @@ RSpec.describe 'index.html' do
     ol = parsed_html.search('ol').first
     expect(ol).to_not be_nil, "Your <ol> tag is missing"
     expect(html_file_contents).to include('</ol>'), "Don't forget to include a closing </ol>"
-
+ 
     children = ol.children.select {|child| child.name == "li"}
     expect(children.length).to be >= 5, "Your <ol> tag needs at least five nested <li> tags"
     expect(children[0]).to match(/Spread butter on bread and frying pan/)
